@@ -1,0 +1,25 @@
+	area pgm,code,readonly
+	export __main
+__main
+	ldr r0,=array
+	ldr r5,=3
+	ldr r2,=0
+loop
+	ldr r1,[r0],#4
+	cmp r1,#0
+	blt loop1
+	b loop2
+loop1
+	add r2,r2,#1
+loop2
+	subs r5,r5,#1
+	bne loop
+	ldr r3,=ans
+	str r2,[r3]
+	;area mem,data,readwrite
+ans dcd 0x0
+array 
+	dcd 0X00000005
+	dcd 0X00000003
+	dcd 0xFFFFFFFB
+	end
