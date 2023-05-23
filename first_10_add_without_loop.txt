@@ -1,0 +1,11 @@
+	AREA ADDD,CODE,READONLY
+	EXPORT __main 
+__main 
+	mov r0,#10
+	mov r1,#2
+	adds r2,r0,#1  
+	mul r3,r2,r0
+	udiv r4,r3,r1 
+stop b stop 
+	area data2,data,readwrite
+	end
